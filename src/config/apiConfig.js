@@ -1,4 +1,6 @@
-const API = "http://localhost:3000";
+require('dotenv').config();
+
+const API = process.env.API_URL;
 
 function createUrl(input) {
   return `${API}/${input}`
