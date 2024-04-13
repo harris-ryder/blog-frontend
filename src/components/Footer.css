@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #e5e5e5;
+    --secondary-color: #777a75;
+    --third-color: #161b07;
+    --accent-color: #646cff;
+    --font-family: Arial, sans-serif;
+  
+    /*padding*/
+    --p-xxs: 2px;
+    --p-xs: 6px;
+    --p-s: 8px;
+    --p-m: 12px;
+    --p-l: 20px;
+    --p-xl: 32px;
+    --p-xxl: 64px;
+  
+    /*border*/
+    --b-radius-xs: 2px;
+    --b-radius-s: 4px;
+    --b-s: 1px;
+    --b-m: 2px;
+    --b-l: 4px;
+  
+    /*font sizes*/
+    --fs-xs: 12px;
+    --fs-s: 14px;
+    --fs-m: 20px;
+    --fs-l: 22px;
+  
+    /*font weight*/
+    --fw-s: 300;
+    --fw-m: 400;
+    --fw-l: 500;
+    --fw-xl: 600;
+  
+    /*Button Heights*/
+    --height-m: 32px;
+  }
+
+  body {
+    font-family: Inter;
+  }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--p-l);
+    background-color: var(--accent-color); /* Adjust the color to match the design */
+    color: #fff; /* Adjust the text color to match the design */
+    gap: var(--p-xxl);
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--p-m);
+  }
+
+
+.prev-article-container p {
+    font-weight: var(--fw-m);
+    font-size: var(--fs-xs);
+    font-family: Inter;
+  }
+  
+
+
+  .footer-section h3 {
+    white-space: nowrap;
+    font-weight: var(--fw-xl);
+    font-size: var(--fs-s);
+    font-family: Inter;
+    white-space: nowrap;
+
+
+  }
+  
+  .footer-section h1 {
+    white-space: nowrap;
+    font-weight: var(--fw-l);
+    font-size: var(--fs-s);
+    font-family: Inter;
+    white-space: nowrap;
+  }
+  
+  .footer-section p {
+    font-weight: var(--fw-l);
+    font-size: var(--fs-s);
+    font-family: Inter;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li a {
+    font-weight: var(--fw-l);
+    font-size: var(--fs-s);
+    font-family: Inter;
+    white-space: nowrap;
+    color: white;
+  }
+  
+  .footer-credits {
+    border-top: 1px solid #444; /* Adjust the color to match the design */
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .footer.clamp {
+    position: absolute;
+    bottom: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .footer {
+        flex-direction: column;
+      }
+
+
+  .footer.clamp {
+    position: static;
+  }
+
+
+  }

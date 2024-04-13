@@ -1,0 +1,6 @@
+.articles-by-category {
+    padding: var(--p-l) var(--p-l);
+    display: flex;
+    flex-direction: column;
+    gap: var(--p-l);
+}

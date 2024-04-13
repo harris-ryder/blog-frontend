@@ -1,0 +1,178 @@
+:root {
+  --primary-color: #e5e5e5;
+  --secondary-color: #777a75;
+  --third-color: #161b07;
+  --accent-color: #646cff;
+  --font-family: Inter, sans-serif;
+
+  /*padding*/
+  --p-xxs: 2px;
+  --p-xs: 6px;
+  --p-s: 8px;
+  --p-m: 12px;
+  --p-l: 20px;
+  --p-xl: 32px;
+  --p-xxl: 64px;
+
+  /*border*/
+  --b-radius-xs: 2px;
+  --b-radius-s: 4px;
+  --b-s: 1px;
+  --b-l: 4px;
+  --b-line: 1.5px solid rgba(128, 128, 128, 0.2);
+
+  /*font sizes*/
+  --fs-xs: 12px;
+  --fs-s: 14px;
+  --fs-m: 20px;
+  --fs-l: 22px;
+
+  /*font weight*/
+  --fw-s: 300;
+  --fw-m: 400;
+  --fw-l: 500;
+  --fw-xl: 600;
+
+  /*Button Heights*/
+  --height-m: 32px;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.prev-article-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--p-l);
+  margin-left: var(--p-l);
+  margin-right: var(--p-l);
+}
+
+.prev-article-container p {
+  font-weight: var(--fw-m);
+  font-size: var(--fs-xs);
+  font-family: Inter;
+}
+
+.prev-article-container h3 {
+  font-weight: var(--fw-l);
+  font-size: var(--fs-s);
+  font-family: Inter;
+  padding-top: var(--p-l);
+  padding-bottom: var(--p-s);
+}
+
+@media screen and (max-width: 600px) {
+
+
+.prev-article-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    gap: var(--p-l);
+    margin-left: var(--p-l);
+    margin-right: var(--p-l);
+  }
+
+  .join-container {
+    flex-direction: column;
+  }
+
+  
+
+}
+
+/*WANT TO BE A WRITER CONTAINER*/
+.join-container {
+  display: flex;
+  margin-top: var(--p-l);
+  padding: var(--p-l) var(--p-l);
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--b-line);
+  border-bottom: var(--b-line);
+}
+
+.join-container .text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-l);
+}
+
+.join-container .lgn-btn {
+  max-width: 80px;
+}
+
+.join-container .img {
+  margin-right: var(--p-xl);
+  width: 500px;
+  aspect-ratio: 18 / 9;
+  background-size: cover; /* This will cover the entire div without stretching the image */
+  background-position: center; /* Centers the background image */
+  background-image: url("../assets/images/writer.png");
+}
+
+
+/*FEATURED TAGS*/
+
+.featured-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--p-l);
+  padding: var(--p-l) var(--p-l);
+  align-items: center;
+  gap: var(--p-xl);
+}
+
+.tag-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--p-s);
+  margin-bottom: var(--p-l);
+}
+
+.tag-group::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  border-top: 2px solid var(--accent-color);
+  z-index: -1;
+}
+
+.tag-group p {
+    background-color: var(--accent-color);
+    border: var(--b-m) solid var(--accent-color);
+    border-radius: var(--b-radius-xs);
+    padding: 0.3em;
+    font-family: Inter;
+    font-weight: var(--fw-l);
+    font-size: var(--fs-xs);
+    color: white;
+}
+
+.tagged-articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-l);
+  max-width: 800px;
+  margin-bottom: var(--p-l);
+}
+
+/*LOADING CONTAINER*/
+.loading-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading-container img {
+  height: 50%;
+}
+

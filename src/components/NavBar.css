@@ -1,0 +1,389 @@
+:root {
+  --primary-color: #e5e5e5;
+  --secondary-color: #777a75;
+  --third-color: #161b07;
+  --accent-color: #646cff;
+  --font-family: Arial, sans-serif;
+
+  /*padding*/
+  --p-xxs: 2px;
+  --p-xs: 6px;
+  --p-s: 8px;
+  --p-m: 12px;
+  --p-l: 20px;
+  --p-xl: 32px;
+  --p-xxl: 64px;
+
+  /*border*/
+  --b-radius-s: 4px;
+  --b-s: 1px;
+  --b-l: 4px;
+
+  /*font sizes*/
+  --fs-s: 14px;
+  --fs-m: 20px;
+  --fs-l: 22px;
+
+  /*font weight*/
+  --fw-s: 300;
+  --fw-m: 400;
+  --fw-l: 500;
+  --fw-xl: 600;
+
+  /*Button Heights*/
+  --height-m: 32px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--p-m);
+  position: relative;
+  padding: var(--p-l) var(--p-l);
+
+}
+.dropdown-content {
+  position: absolute;
+  background-color: var(--primary-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+  top: -300%;
+  left: 0;
+  opacity: 0;
+  padding: var(--p-l) var(--p-l);
+  transition: top 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  gap: var(--p-xl);
+}
+
+.dropdown-content-topics p,
+.dropdown-content-topics a {
+  color: var(--third-color);
+  padding: var(--p-xxs) var(--p-l);
+  font-weight: var(--fw-m);
+  font-size: var(--fs-s);
+  font-family: Inter;
+}
+
+.dropdown-content-topics a {
+  color: var(--accent-color);
+  font-weight: var(--fw-l);
+}
+
+.dropdown-content-topics {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content-topics a:hover {
+  text-decoration: underline;
+}
+
+.header-left.visible ~ .dropdown-content {
+  top: 100%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dropdown-content-articles {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--p-l);
+  justify-content: space-between;
+}
+
+.nano-prev-container {
+  display: flex;
+  flex-grow: 1;
+  gap: var(--p-s);
+}
+
+.nano-prev-container p {
+  color: var(--accent-color);
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+}
+
+.nano-prev-container a {
+  color: var(--third-color);
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+}
+
+.nano-prev-image-1 {
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover; /* This will cover the entire div without stretching the image */
+  background-position: center; /* Centers the background image */
+  background-image: url("../assets/images/article-1.jpeg");
+}
+
+.header-account {
+  width: var(--height-m);
+  height: var(--height-m);
+  border-radius: 999px;
+  background-color: var(--secondary-color);
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+  margin-right: var(--p-xl);
+  background-image: url("../assets/cat.png"); /* Add your image path here */
+  background-size: cover; /* This will cover the entire div without stretching the image */
+  background-position: center; /* Centers the background image */
+  border: var(--b-l) solid transparent;
+}
+
+.header-account:hover {
+  border: var(--b-l) solid var(--accent-color);
+}
+
+.account-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--primary-color);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 110%;
+  border-radius: var(--b-radius-s);
+  right: calc(var(--p-l) + var(--p-xl) + var(--height-m) / 2);
+  padding: var(--p-m) var(--p-m);
+  transform: translateX(50%);
+}
+
+.account-dropdown-content p {
+  color: var(--third-color);
+  font-size: var(--fs-s);
+  font-weight: var(--fw-m);
+  font-family: Inter;
+}
+.account-dropdown-content a {
+  color: var(--accent-color);
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+}
+
+.account-dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+.account-dropdown-content::after {
+  content: "";
+  position: absolute;
+  top: -10px; /* Position above the dropdown content */
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent; /* Triangle left side */
+  border-right: 10px solid transparent; /* Triangle right side */
+  border-bottom: 10px solid var(--primary-color); /* Triangle bottom, same color as dropdown background */
+}
+
+.header-account.visible ~ .account-dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.mb-header {
+  display: none;
+  padding: var(--p-l) var(--p-l);
+}
+
+
+.mb-link {
+  color: var(--accent-color);
+  font-size: var(--fs-m);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    display: none;
+  }
+
+  .mb-header {
+    display: block;
+  }
+
+  .mb-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--p-s);
+  }
+
+  .mb-dropdown {
+    pointer-events: all;
+  }
+}
+
+/*HAMBURGER MENU*/
+:root {
+  --bar-width: 30px;
+  --bar-height: 4px;
+  --hamburger-gap: 4px;
+  --foreground: #777a75;
+  --background: white;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  top: var(--hamburger-margin);
+  left: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: var(--accent-color);
+  --background: white;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.mb-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: transform var(--animation-timing), opacity var(--animation-timing);
+  color: var(--background);
+  transform: translateY(-100%);
+  overflow: hidden; /* Prevent content from showing when max-height is 0 */
+  opacity: 0;
+}
+
+.mb-dropdown.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  max-height: 0;
+}
+
+.mb-dropdown.visible {
+  transform: translateY(0);
+  max-height: 500px;
+  opacity: 1;
+}
+
+/*DROPDOWN ARROW FOR MOBILE MODE READ*/
+.mb-link {
+  position: relative;
+}
+
+
+.mb-link::before {
+  --cal-n: -50%; /*Calibration value for calculation*/
+  --cal-p: 50%; /*Same val but positive -> Saves me doing calc()*/
+  position: absolute;
+  content: "";
+  display: block;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-bottom: 0.4em solid var(--secondary-color);
+  border-top: 0.4em solid transparent;
+  right: calc(var(--x-width) / 2);
+  top: 50%;
+  transform: translateY(-70%);
+  transition: transform 0.25s;
+  transform-origin: 50% 70%;
+}
+
+.mb-link.visible::before {
+  transform: translateY(-60%) rotate(180deg);
+}
+
+.mb-dropdown {
+  transition: height var(--animation-timing) ease-out,
+    opacity var(--animation-timing) ease-out;
+  color: var(--background);
+  transform: translateY(-100%);
+  overflow: hidden; /* Prevent content from showing when max-height is 0 */
+  opacity: 0;
+  max-height: 0;
+  padding-top: var(--p-m);
+}
+
+.mb-link-child {
+  padding-left: var(--p-s);
+  font-size: var(--fs-s);
+  font-family: Inter;
+}
+
+.mb-link-child.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  max-height: 0;
+  pointer-events: none;
+}
+
+.mb-dropdown.visible {
+  transform: translateY(0);
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height var(--animation-t);
+}
+
+.mb-login {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+}

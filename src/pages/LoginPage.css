@@ -1,0 +1,129 @@
+  :root {
+    --primary-color: #e5e5e5;
+    --secondary-color: #777a75;
+    --third-color: #161b07;
+    --accent-color: #646cff;
+    --font-family: Inter, sans-serif;
+  
+    /*padding*/
+    --p-xxs: 2px;
+    --p-xs: 6px;
+    --p-s: 8px;
+    --p-m: 12px;
+    --p-l: 20px;
+    --p-xl: 32px;
+    --p-xxl: 64px;
+  
+    /*border*/
+    --b-radius-xs: 2px;
+    --b-radius-s: 4px;
+    --b-s: 1px;
+    --b-l: 4px;
+    --b-line: 1.5px solid rgba(128, 128, 128, 0.2);
+  
+    /*font sizes*/
+    --fs-xs: 12px;
+    --fs-s: 14px;
+    --fs-m: 20px;
+    --fs-l: 22px;
+  
+    /*font weight*/
+    --fw-s: 300;
+    --fw-m: 400;
+    --fw-l: 500;
+    --fw-xl: 600;
+  
+    /*Button Heights*/
+    --height-m: 32px;
+
+    --size-bezel: 0.6rem;
+    --size-radius: 4px;
+  }
+
+  body {
+    font-family: Inter;
+  }
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30vw;
+    margin: 150px auto;
+    gap: var(--p-l);
+    font-weight: var(--fw-xl);
+    font-size: var(--fs-s);
+    font-family: Inter;
+}
+
+.input {
+    position: relative;
+  }
+
+
+  .input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: white;
+    color: var(--accent-color);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+    pointer-events: none;
+  
+  }
+
+
+  .input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid var(--accent-color);
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: var(--accent-color);
+    background: transparent;
+    border-radius: var(--size-radius);
+    outline: none;
+  }
+  
+  .input__field:focus + .input__label {
+    transform: translate(0.25rem, -65%) scale(.8);
+    color: var(--accent-color);
+  }
+
+  .input__field:not([value=""]) + .input__label {
+    transform: translate(0.25rem, -65%) scale(.8);
+    color: var(--accent-color);
+}
+
+  .login-form button {
+    border: 2px solid var(--accent-color);
+    font-weight: var(--fw-xl);
+    font-size: var(--fs-s);
+    font-family: Inter;
+    color: var(--accent-color);
+    background-color: white;
+    padding: calc(var(--size-bezel) * 1.2) var(--size-bezel);
+  }
+
+  .login-form button:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .login-form {
+    
+        width: 70vw;
+       
+    }
+
+  }

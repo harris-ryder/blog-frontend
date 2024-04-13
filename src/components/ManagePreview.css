@@ -1,0 +1,25 @@
+.manage-tag-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--p-s);
+    margin-bottom: var(--p-l);
+  }
+
+
+  .manage-tag-group p {
+    background-color: var(--accent-color);
+    border: var(--b-m) solid var(--accent-color);
+    border-radius: var(--b-radius-xs);
+    padding: 0.3em;
+    font-family: Inter;
+    font-weight: var(--fw-l);
+    font-size: var(--fs-xs);
+    color: white;
+}
+
+.wide-preview .buttons {
+    display: flex;
+    gap: var(--p-l);
+}

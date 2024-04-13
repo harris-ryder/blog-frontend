@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #e5e5e5;
+  --secondary-color: #777a75;
+  --third-color: #161b07;
+  --accent-color: #646cff;
+  --font-family: Inter, sans-serif;
+
+  /*padding*/
+  --p-xxs: 2px;
+  --p-xs: 6px;
+  --p-s: 8px;
+  --p-m: 12px;
+  --p-l: 20px;
+  --p-xl: 32px;
+  --p-xxl: 64px;
+
+  /*border*/
+  --b-radius-s: 4px;
+  --b-s: 1px;
+  --b-l: 4px;
+
+  /*font sizes*/
+  --fs-s: 14px;
+  --fs-m: 20px;
+  --fs-l: 22px;
+  --fs-xl: 32px;
+
+  /*font weight*/
+  --fw-s: 300;
+  --fw-m: 400;
+  --fw-l: 500;
+  --fw-xl: 600;
+
+  /*Button Heights*/
+  --height-m: 32px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: var(--fw-m);
+  color: var(--accent-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+
+}
+
+h1 {
+  font-size: var(--fs-l);
+  line-height: 1.1;
+}
+
+/*BASIC BUTTON DESIGN*/
+button {
+  position: relative;
+  border-radius: var(--b-radius-s);
+  border: 1px solid transparent;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  font-weight: 300;
+  font-family: Inter;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+
+/*LOGIN BUTTON*/
+.lgn-btn {
+  position: relative;
+  border-radius: var(--b-radius-s);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.4em 1em;
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+  cursor: pointer;
+  transition: transform 0.25s,box-shadow 0.25s;
+  box-shadow: 0 2px 15px rgba(103, 64, 220, 0.3);
+
+}
+
+.lgn-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  box-shadow: 0 2px 15px rgba(103, 64, 220, 0.6);
+  transform: translateY(4%);
+
+}
+
+/*DROPDOWN BUTTON DESIGN*/
+.drop-btn {
+  position: relative;
+  border-radius: var(--b-radius-s);
+  border: 1px solid transparent;
+  padding: 0.4em 1em;
+  padding-left: 1.8em;
+  font-size: var(--fs-s);
+  font-weight: var(--fw-l);
+  font-family: Inter;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+
+.drop-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.drop-btn:hover::before {
+  border-bottom: 0.4em solid var(--accent-color);
+
+}
+
+
+.drop-btn::before {
+  --cal-n: -75%; /*Calibration value for calculation*/
+  --cal-p: 75%; /*Same val but positive -> Saves me doing calc()*/
+  position: absolute;
+  content: "";
+  display: block;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-bottom: 0.4em solid var(--secondary-color);
+  border-top: 0.4em solid transparent;
+  left: 0.6em;
+  top: 50%;
+  transform: translateY(var(--cal-n));
+  transition: transform 0.25s;
+  transform-origin: 50% var(--cal-p);
+}
+
+
+.drop-btn.visible::before {
+  transform: translateY(var(--cal-n)) rotate(180deg);
+}
+
+/*TITLE DESIGN*/
+.title-large {
+  font-family: "Space Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: var(--fs-xl);
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: block;
+}
+
+
+.title-large {
+  line-height: 1;
+}
+.title-large:hover {
+  border-color: var(--accent-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: var(--accent-color);
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+.article {
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--p-l) var(--p-l);
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+
+}
+
+.article h1, .article p {
+  text-align: center;
+}
+
+.article .markdown-text {
+  margin: 0;
+
+}
+
+.article .date-author {
+  padding-bottom: var(--p-l);
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

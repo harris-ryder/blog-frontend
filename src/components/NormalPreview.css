@@ -1,0 +1,118 @@
+:root {
+  --primary-color: #e5e5e5;
+  --secondary-color: #777a75;
+  --third-color: #161b07;
+  --accent-color: #646cff;
+  --font-family: Arial, sans-serif;
+
+  /*padding*/
+  --p-xxs: 2px;
+  --p-xs: 6px;
+  --p-s: 8px;
+  --p-m: 12px;
+  --p-l: 20px;
+  --p-xl: 32px;
+  --p-xxl: 64px;
+
+  /*border*/
+  --b-radius-xs: 2px;
+  --b-radius-s: 4px;
+  --b-s: 1px;
+  --b-m: 2px;
+  --b-l: 4px;
+
+  /*font sizes*/
+  --fs-xs: 12px;
+  --fs-s: 14px;
+  --fs-m: 20px;
+  --fs-l: 22px;
+
+  /*font weight*/
+  --fw-s: 300;
+  --fw-m: 400;
+  --fw-l: 500;
+  --fw-xl: 600;
+
+  /*Button Heights*/
+  --height-m: 32px;
+}
+.normal-preview {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+    position: relative;
+}
+
+
+.normal-preview .image-container img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+  border: var(--b-m) solid var(--accent-color);
+  border-radius: var(--b-radius-xs);
+}
+
+.normal-preview p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.normal-preview .image-container span {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    background-color: var(--accent-color);
+    border: var(--b-m) solid var(--accent-color);
+    border-radius: var(--b-radius-xs);
+    padding: 0.3em;
+    transform: translate(-50%, 30%);
+    font-family: Inter;
+    font-weight: var(--fw-l);
+    font-size: var(--fs-xs);
+    color: white;
+
+}
+
+/*NORMAL PREVIEW PROPERTIES BUT FOR LARGE SETTING*/
+.normal-preview.large {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--p-s);
+}
+
+.normal-preview.large .image-container  img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 9/12;
+}
+
+.normal-preview.large .image-container  p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .normal-preview.large {
+        grid-row: span 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--p-s);
+      }
+
+      .normal-preview.large .image-container  img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/10;
+      }
+}
