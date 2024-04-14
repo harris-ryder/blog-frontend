@@ -51,9 +51,10 @@ export const ApiProvider = ({ children }) => {
         console.log("Token found in localStorage.");
       }
 
-      
+      const BASE_URL = "https://"; // Define your API base URL here
+
   
-      const response = await axios.get(url, {
+      const response = await axios.get(`${BASE_URL}/${url}`, {
         headers: {
           Authorization: `Bearer ${tokenVal}`,
         },
