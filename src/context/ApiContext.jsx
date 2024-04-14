@@ -16,6 +16,7 @@ export const ApiProvider = ({ children }) => {
   const [apiData, setApiData] = useState(null); // State to store user data
   const [navData, setNavData] = useState(null);
 
+  const BASE_URL = "https://";
 
 
   const fetchNav = async () => {
@@ -25,7 +26,8 @@ export const ApiProvider = ({ children }) => {
     }
 
     axios
-      .get(ENDPOINTS.NAV)
+      .get(`${BASE_URL}/${ENDPOINTS.NAV}`
+      )
       .then((response) => {
         setNavData(response.data);
       })
@@ -51,7 +53,6 @@ export const ApiProvider = ({ children }) => {
         console.log("Token found in localStorage.");
       }
 
-      const BASE_URL = "https://"; // Define your API base URL here
 
   
       const response = await axios.get(`${BASE_URL}/${url}`, {
@@ -87,8 +88,11 @@ export const ApiProvider = ({ children }) => {
     console.log(`trying: ${url}`);
     console.log(`Logged in checker (before fetch): ${isLoggedIn}`);
 
+
+
     try {
-      const response = await axios.get(url, {
+      const response = await axios.get(`${BASE_URL}/${url}`
+      , {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
