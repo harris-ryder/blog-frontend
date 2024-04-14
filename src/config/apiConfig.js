@@ -1,6 +1,6 @@
-require('dotenv').config();
 
-const API = process.env.API_URL;
+
+const API = import.meta.env.VITE_API_URL;
 
 function createUrl(input) {
   return `${API}/${input}`
