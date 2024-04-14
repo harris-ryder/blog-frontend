@@ -53,7 +53,7 @@ export const ApiProvider = ({ children }) => {
 
       
   
-      const response = await axios.get(`https://${url}`, {
+      const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${tokenVal}`,
         },
