@@ -1,7 +1,6 @@
 
 
 const API = import.meta.env.VITE_API_URL;
-console.log(`The API KEY IS ${API}`);
 
 function createUrl(input) {
   return `${API}/${input}`

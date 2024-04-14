@@ -86,7 +86,7 @@ function NavBar() {
             </div>
 
             <div className="dropdown-content-articles">
-              {navData ? (
+              {(navData) ? (
                 <>
                   <NanoPreview
                     title={navData[0].title}
