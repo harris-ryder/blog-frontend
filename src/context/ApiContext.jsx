@@ -42,6 +42,7 @@ export const ApiProvider = ({ children }) => {
       console.log(`trying: ${url}`);
       //PASSPORT JWS WILL THROW AN ERROR IF THE JWT IS EMPTY (SO I NEED TO)
       let tokenVal = localStorage.getItem("token")?.trim();
+
       if (!tokenVal || tokenVal === "Bearer") {
         console.log("Token is empty or invalid. Using default token.");
         tokenVal =
@@ -50,7 +51,9 @@ export const ApiProvider = ({ children }) => {
         console.log("Token found in localStorage.");
       }
 
-      const response = await axios.get(url, {
+      
+      let absUrl = "/"+url;
+      const response = await axios.get(absUrl, {
         headers: {
           Authorization: `Bearer ${tokenVal}`,
         },
