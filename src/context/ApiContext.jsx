@@ -52,8 +52,8 @@ export const ApiProvider = ({ children }) => {
       }
 
       
-      let absUrl = "/"+url;
-      const response = await axios.get(absUrl, {
+  
+      const response = await axios.get(`https://${url}`, {
         headers: {
           Authorization: `Bearer ${tokenVal}`,
         },
