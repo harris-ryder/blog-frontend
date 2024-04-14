@@ -2,20 +2,23 @@
 
 const API = import.meta.env.VITE_API_URL;
 
+const BASE_URL = "https://"
+
+
 function createUrl(input) {
-  return `${API}/${input}`
+  return `${BASE_URL}${API}/${input}`
 }
 
 function createReadUrl(input) {
-  return `${API}/posts/category/${input}`
+  return `${BASE_URL}${API}/posts/category/${input}`
 }
 
 function postsUrl(input){
-  return `${API}/posts/${input}`
+  return `${BASE_URL}${API}/posts/${input}`
 }
 
 export const ENDPOINTS = {
-  HOME: `${API}/`,
+  HOME: `${BASE_URL}${API}/`,
   LOGIN: createUrl('account/login'),
   SIGNUP: createUrl('account/signup'),
   ACCOUNT: createUrl('account'),

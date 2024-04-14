@@ -26,7 +26,7 @@ export const ApiProvider = ({ children }) => {
     }
 
     axios
-      .get(`${BASE_URL}/${ENDPOINTS.NAV}`
+      .get(ENDPOINTS.NAV
       )
       .then((response) => {
         setNavData(response.data);
@@ -55,7 +55,7 @@ export const ApiProvider = ({ children }) => {
 
 
   
-      const response = await axios.get(`${BASE_URL}/${url}`, {
+      const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${tokenVal}`,
         },
@@ -91,7 +91,7 @@ export const ApiProvider = ({ children }) => {
 
 
     try {
-      const response = await axios.get(`${BASE_URL}/${url}`
+      const response = await axios.get(url
       , {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
