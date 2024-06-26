@@ -43,9 +43,9 @@
   /*Button Heights*/
   --height-m: 32px;
 
-  color-scheme: light dark;
+  color-scheme: light;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -185,18 +185,7 @@ button:hover {
   border-color: var(--accent-color);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: var(--accent-color);
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
 
 
 
